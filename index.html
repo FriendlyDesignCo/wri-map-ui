@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>WRI Map</title>
+  </head>
+  <body>
+    <div id="full-container">
+      <div id="main-container"><!-- Start Main Container -->
+        <div id="menu-open-overlay"></div>
+
+        <div id="ribbon"><!-- Ribbon -->
+          A project convened by <a href="#partner" target="_blank">World Resources Institute</a>
+        </div><!-- End Ribbon -->
+
+        <div id="header"><!-- Header -->
+          <div id="map-title">
+            Indonesia Fires and Concessions
+          </div>
+          <div id="header-right">
+            <div id="menu-open-button">
+              <div class="border"></div>
+              <div class="button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <p>Menu</p>
+              </div>
+            </div>
+            <a href="#partner" target="_blank"><img id="partner-logo" src="images/wri_logo.png" title="World Resources Institute"></a>
+            <div class="clearfix"></div>
+          </div>
+        </div><!-- End Header -->
+
+      </div><!-- End Main Container -->
+      <div id="main-menu">
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/wri-map.js"></script>
+    <script type="text/javascript">
+      jQuery(function($){
+        $("body").wriMap({});
+      });
+    </script>
+  </body>
+</html>

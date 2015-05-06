@@ -1,0 +1,84 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300);
+
+$menuWidth: 300px;
+$ribbonHeight: 32px;
+$headerHeight: 120px;
+$gray: #dbdbdb;
+$orange: #efab00;
+
+@import 'main-menu.scss';
+@import 'ribbon.scss';
+
+body {
+  font-size: 16px;
+  font-family: 'Helvetica', sans-serif;
+  overflow-x:hidden;
+  color:#333;
+}
+
+.clearfix { clear:both; }
+
+/* Container for the offscreen menu */
+#full-container {
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+
+  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+
+  transition:all 0.25s ease-in-out;
+  -webkit-transition:all 0.25s ease-in-out;
+  -o-transition:all 0.25s ease-in-out;
+  -moz-transition:all 0.25s ease-in-out;
+
+  .menu-open & {
+    transform: translate3d(-$menuWidth,0,0);
+    -webkit-transform: translate3d(-$menuWidth,0,0);
+    -o-transform: translate3d(-$menuWidth,0,0);
+    -moz-transform: translate3d(-$menuWidth,0,0);
+  }
+
+  #main-container {
+    #menu-open-overlay {
+      width:100%;
+      height:100%;
+      position:absolute;
+      z-index:50;
+      top:0;
+      left:0;
+      background:#000;
+      display:none;
+      opacity:0;
+
+      transition:opacity 0.25s;
+      -webkit-transition:opacity 0.25s;
+      -o-transition:opacity 0.25s;
+      -moz-transition:opacity 0.25s;
+
+      .menu-open & {
+        display:block;
+        opacity:0.3;
+      }
+    }
+  }
+}
+
+#main-container {
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+
+  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+
+  @import 'header.scss';
+}
