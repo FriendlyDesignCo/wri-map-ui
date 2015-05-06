@@ -11,12 +11,18 @@ $orange: #efab00;
 
 body {
   font-size: 16px;
-  font-family: 'Helvetica', sans-serif;
+  font-family: 'Helvetica', Arial, sans-serif;
   overflow-x:hidden;
   color:#333;
 }
 
 .clearfix { clear:both; }
+
+@mixin shadows {
+  -webkit-box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.35);
+  -moz-box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.35);
+  box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.35);
+}
 
 /* Container for the offscreen menu */
 #full-container {
