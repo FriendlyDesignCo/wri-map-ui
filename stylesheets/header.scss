@@ -5,9 +5,18 @@
   width:100%;
 
   #map-title {
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-weight:700;
-    font-size:50px;
+    h1 {
+      font-family: 'Open Sans Condensed', sans-serif;
+      font-weight:700;
+      font-size:50px;
+      line-height:0.9em;
+      @media screen and (max-width:640px) {
+        font-size:40px;
+      }
+      @media screen and (max-width:480px) {
+        font-size:30px;
+      }
+    }
     padding-left:30px;
     display:table-cell;
     vertical-align:middle;
@@ -43,6 +52,9 @@
 
     #menu-open-button {
       width:90px;
+      @media screen and (max-width:480px) {
+        width:70px;
+      }
       cursor:pointer;
       position:relative;
       float:right;
@@ -62,6 +74,9 @@
         font-family: 'Open Sans Condensed', sans-serif;
         font-weight:700;
         width:90px;
+        @media screen and (max-width:480px) {
+          width:70px;
+        }
         text-align:center;
         line-height:5px;
         margin-top:32px;
@@ -70,8 +85,8 @@
         .bar {
           display:inline-block;
           width:30px;
-          margin-left:30px;
-          margin-right:30px;
+          margin-left:20px;
+          margin-right:20px;
           height:3px;
           background:$gray;
         }
