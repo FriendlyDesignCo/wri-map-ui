@@ -6,4 +6,42 @@
   top:0;
   right:0;
   background:#4b4b4b;
+
+  hr {
+    border-color:#000;
+    border-bottom:none;
+    width:80%;
+  }
+
+  nav {
+    a {
+      color:#fff;
+      text-decoration:none;
+
+      &:hover {
+        color:#cccccc;
+      }
+    }
+    li.active a {
+      color:#f0ab00;
+    }
+
+    ul {
+      margin:32px;
+      padding:0;
+      li {
+        list-style:none;
+        line-height:50px;
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-weight:300;
+        font-size:27px;
+
+        ul {
+          margin-top:0;
+          margin-bottom:0;
+          margin-left:20px;
+        }
+      }
+    }
+  }
 }
