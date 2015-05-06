@@ -63,7 +63,7 @@ body {
       top:0;
       left:0;
       background:#000;
-      display:none;
+      visibility:hidden;
       opacity:0;
 
       transition:opacity 0.25s;
@@ -72,7 +72,12 @@ body {
       -moz-transition:opacity 0.25s;
 
       .menu-open & {
-        display:block;
+        transition:opacity 0.25s;
+        -webkit-transition:opacity 0.25s;
+        -o-transition:opacity 0.25s;
+        -moz-transition:opacity 0.25s;
+
+        visibility:visible;
         opacity:0.3;
       }
     }
@@ -201,7 +206,7 @@ body {
               form {
                 display:inline-block;
               }
-              
+
               i {
                 padding-right:0;
               }
