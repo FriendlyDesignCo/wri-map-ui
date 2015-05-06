@@ -67,7 +67,7 @@
       var checkZoomButtonsEnabled = function(){
         if (zoomLevel > 2) $("#zoom-in-button").addClass('disabled'); else $("#zoom-in-button").removeClass('disabled');
         if (zoomLevel < 1) $("#zoom-out-button").addClass('disabled'); else $("#zoom-out-button").removeClass('disabled');
-      }
+      };
       jQuery(function($){
         $("body").wriMap({
           onZoomHome: function(){ zoomLevel = 1; checkZoomButtonsEnabled(); console.log("Zooming to home (1)"); },
