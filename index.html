@@ -49,7 +49,7 @@
               <div class="button"><i class="fa fa-home" id="home-button"></i></div>
               <div class="button">
                 <i class="fa fa-plus" id="zoom-in-button"></i>
-                <i class="fa fa-minus" id="zoom-out-button"></i>
+                <i class="fa fa-minus" id="zoom-out-button"></i><!-- Add the "disabled" class to indicate no further zooming is possible -->
               </div>
             </div>
           </div><!-- End Map Container -->
@@ -63,11 +63,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="js/wri-map.js"></script>
     <script type="text/javascript">
+      var zoomLevel = 1;
+      var checkZoomButtonsEnabled = function(){
+        if (zoomLevel > 2) $("#zoom-in-button").addClass('disabled'); else $("#zoom-in-button").removeClass('disabled');
+        if (zoomLevel < 1) $("#zoom-out-button").addClass('disabled'); else $("#zoom-out-button").removeClass('disabled');
+      }
       jQuery(function($){
         $("body").wriMap({
-          onZoomHome: function(){ console.log("Zooming home!"); },
-          onZoomIn:   function(){ console.log("Zooming in!"); },
-          onZoomOut:  function(){ console.log("Zooming out!"); }
+          onZoomHome: function(){ zoomLevel = 1; checkZoomButtonsEnabled(); console.log("Zooming to home (1)"); },
+          onZoomIn:   function(){ if ($(this).hasClass('disabled')) return; zoomLevel++; checkZoomButtonsEnabled(); console.log("Zoomed in to " + zoomLevel); },
+          onZoomOut:  function(){ if ($(this).hasClass('disabled')) return; zoomLevel--; checkZoomButtonsEnabled(); console.log("Zoomed out to " + zoomLevel); }
         });
       });
     </script>
