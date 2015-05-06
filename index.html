@@ -81,7 +81,7 @@
           onZoomHome: function(){ zoomLevel = 1; checkZoomButtonsEnabled(); console.log("Zooming to home (1)"); },
           onZoomIn:   function(){ if ($(this).hasClass('disabled')) return; zoomLevel++; checkZoomButtonsEnabled(); console.log("Zoomed in to " + zoomLevel); },
           onZoomOut:  function(){ if ($(this).hasClass('disabled')) return; zoomLevel--; checkZoomButtonsEnabled(); console.log("Zoomed out to " + zoomLevel); },
-          onSearch:   function(data){ console.log("User searched for: ", data); }
+          onSearch:   function(data){ console.log("User searched for: ", data); return true; } // Return true to close the search box afterwards, false to leave it open
         });
       });
     </script>

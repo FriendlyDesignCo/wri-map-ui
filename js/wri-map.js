@@ -23,7 +23,6 @@
       searchExpandButton: "#search-button",
       searchCollapseButton: "#search-collapse-button",
       searchBox: "#search-box",
-      leaveSearchOpenAfterSearch: false,
       zoomHomeButton: "#home-button",
       zoomInButton: "#zoom-in-button",
       zoomOutButton: "#zoom-out-button",
@@ -82,8 +81,7 @@
 
     $("#search-expandable form").submit(function(e){
       e.preventDefault();
-      $.proxy(settings.onSearch)($(this).find('input[type=text]').val());
-      if (settings.leaveSearchOpenAfterSearch === false) {
+      if ($.proxy(settings.onSearch)($(this).find('input[type=text]').val())) {
         $("#search-expandable").removeClass('expanded');
       }
     });
