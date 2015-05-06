@@ -4,6 +4,7 @@ $menuWidth: 300px;
 $ribbonHeight: 32px;
 $headerHeight: 120px;
 $gray: #dbdbdb;
+$transparentGray: rgba(63,63,63,0.45);
 $orange: #efab00;
 
 @import 'main-menu.scss';
@@ -17,6 +18,10 @@ body {
 }
 
 .clearfix { clear:both; }
+
+.button {
+  border-radius:3px;
+}
 
 @mixin shadows {
   -webkit-box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.35);
@@ -103,6 +108,41 @@ body {
       height:100%;
       position:relative;
       z-index:1;
+
+      #map {
+        width:100%;
+        height:100%;
+      }
+
+      #right-controls {
+        position:absolute;
+        right:20px;
+        top:20px;
+
+        .button {
+          background:$transparentGray;
+          font-size:23px;
+          margin:10px;
+          color:#fbfbfb;
+          text-align:center;
+          i {
+            padding:10px;
+            padding-bottom:6px;
+            display:block;
+            width:30px;
+            height:30px;
+            cursor:pointer;
+
+            &:hover {
+              color:#ccc;
+            }
+          }
+          i+i {
+            margin-top:10px;
+            padding-bottom:5px;
+          }
+        }
+      }
     }
   }
 }
