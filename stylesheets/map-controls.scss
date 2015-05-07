@@ -1,0 +1,195 @@
+#map-controls {
+  background:#252525;
+  position:absolute;
+  top:30px;
+  left:30px;
+  font-size:23px;
+  color:#fff;
+  border-radius:3px;
+  width:165px;
+  box-sizing:border-box;
+  overflow:hidden;
+
+  transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+
+  #map-control-header {
+    position:relative;
+    background:#0692c3;
+
+    transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+
+    &.second-page {
+      transform:translate3d(-100%,0,0);
+      -o-transform:translate3d(-100%,0,0);
+      -webkit-transform:translate3d(-100%,0,0);
+      -moz-transform:translate3d(-100%,0,0);
+    }
+
+    & > div {
+      display:table-row;
+      width:100%;
+      padding:10px;
+
+      i {
+        display:table-cell;
+        font-size:23px;
+        cursor:pointer;
+        padding:10px;
+        width:30px;
+
+        &.fa-chevron-left {
+          font-size:18px;
+          line-height:23px;
+        }
+      }
+      span {
+        width:100%;
+        display:table-cell;
+        font-size:18px;
+        font-weight:bold;
+        text-align:center;
+        padding-right:10px;
+      }
+    }
+
+    #map-control-secondary-header {
+      position:absolute;
+      top:0;
+      right:0;
+      margin-right:-100%;
+      padding:0;
+      background:#252525;
+    }
+  }
+
+  #map-control-container {
+    max-height:0;
+    background:#464644;
+    color:#999999;
+    font-weight:100;
+    font-size:16px;
+    width:100%;
+    float:left;
+    position:relative;
+
+    transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+
+    &.second-page {
+      transform:translate3d(-100%,0,0);
+      -o-transform:translate3d(-100%,0,0);
+      -webkit-transform:translate3d(-100%,0,0);
+      -moz-transform:translate3d(-100%,0,0);
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      position:relative;
+      width:100%;
+
+      &.second-container {
+        position:absolute;
+        top:0;
+        right:0;
+        margin-right:-100%;
+      }
+
+      li {
+        list-style-type:none;
+        line-height: 64px;
+        display:block;
+        width:100%;
+        clear:both;
+        position:relative;
+        background:#464644;
+
+        transition:color 0.25s;
+        -o-transition:color 0.25s;
+        -moz-transition:color 0.25s;
+        -webkit-transition:color 0.25s;
+
+        > span {
+          padding:0 20px;
+          float:left;
+        }
+
+        i.fa-chevron-right {
+          float:right;
+          display:inline-block;
+          line-height:64px;
+          padding-right:20px;
+        }
+
+        &.has-children {
+          cursor:pointer;
+
+          &:hover {
+            color:#ccc;
+
+            &:after {
+              color:#ccc;
+            }
+          }
+
+          &:after {
+            display:inline-block;
+            position:absolute;
+            top:0;
+            right:0;
+            font: normal normal normal 14px/1 FontAwesome;
+            text-rendering:auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transform: translate(0, 0);
+            content: "\f054";
+            color:#59595c;
+            font-size:18px;
+            line-height:64px;
+            padding-right:20px;
+
+            transition:color 0.25s;
+            -o-transition:color 0.25s;
+            -moz-transition:color 0.25s;
+            -webkit-transition:color 0.25s;
+          }
+        }
+
+        &.spacer {
+          height:20px;
+          background:rgba(70, 70, 68, 0.3);
+        }
+
+        ul {
+          display:none;
+        }
+      }
+
+      li + li {
+        border-top:1px solid #272727;
+      }
+    }
+  }
+
+  .map-controls-open & {
+    width:300px;
+    border-radius:0;
+    @include shadows;
+
+    #map-control-header {
+      background:#252525;
+    }
+
+    #map-control-container {
+      max-height:400px;
+    }
+  }
+}
