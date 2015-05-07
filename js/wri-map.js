@@ -98,7 +98,7 @@
 
     $("#map-control-container").find('ul > li').each(function(){
       $(this).append('<div class="clearfix"></div>');
-      if ($(this).find('ul').length > 0)
+      if ($(this).find('ul').length > 0 || $(this).find('select').length > 0)
         $(this).addClass('has-children');
     });
 
@@ -113,7 +113,27 @@
       $("#map-control-header").addClass('second-page');
 
       // Menu items
-      $("#map-control-container").append($(this).find('ul').clone().addClass('second-container'));
+      if ($(this).find('ul').length > 0) {
+        $("#map-control-container").append($(this).find('ul').clone().addClass('second-container'));
+      }
+      if ($(this).find('select').length > 0) {
+        $("#map-control-container").append('<ul data-select-id="#' + $(this).find('select').first().attr('id') + '" class="second-container"></ul>');
+        $(this).find('select option').each(function(){
+          var newElement = $("<li data-value='" + $(this).attr('value') + "' class='select-option'><span>" + $(this).html() + "</span><div class='circle'></div><div class='clearfix'></div></li>");
+          if ($(this).is(':selected')) {
+            newElement.addClass('selected');
+          }
+          $("#map-control-container ul.second-container").append(newElement);
+        });
+
+        $("#map-control-container ul.second-container").on('click','li.select-option',function(e){
+          e.preventDefault();
+          var selectElement = $($(this).parent().data('select-id'));
+          selectElement.find('option[value=' + $(this).data('value') + ']').prop('selected',true);
+          $(this).parent().find('.selected').removeClass('selected');
+          $(this).addClass('selected');
+        });
+      }
       $("#map-control-container").addClass('second-page').css({'max-height':$('ul.second-container').height()});
 
       // Back button

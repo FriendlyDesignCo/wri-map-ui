@@ -43,6 +43,10 @@
         padding:10px;
         width:30px;
 
+        &:hover {
+          color:#ccc;
+        }
+
         &.fa-chevron-left {
           font-size:18px;
           line-height:23px;
@@ -129,6 +133,52 @@
           padding-right:20px;
         }
 
+        /* Dealing with <select>s */
+        .circle {
+          float:right;
+          display:inline-block;
+          position:absolute;
+          top:20px;
+          right:20px;
+          width:18px;
+          height:18px;
+          border:1px solid #979797;
+          border-radius:50%;
+          position:relative;
+
+          &:after {
+            width:16px;
+            height:16px;
+            display:inline-block;
+            content:" ";
+            position:absolute;
+            top:1px;
+            right:1px;
+            border-radius:50%;
+            opacity:0;
+
+            transition:opacity 0.25s ease-in-out;
+            -moz-transition:opacity 0.25s ease-in-out;
+            -webkit-transition:opacity 0.25s ease-in-out;
+            -o-transition:opacity 0.25s ease-in-out;
+          }
+        }
+        &.selected .circle:after {
+          background:#eeaa1f;
+          opacity:1;
+        }
+        &:not(.selected):hover .circle:after {
+          background:#fff;
+          opacity:0.1;
+        }
+        select {
+          display:none;
+        }
+        &.select-option {
+          cursor:pointer;
+        }
+
+        /* Nested menus */
         &.has-children {
           cursor:pointer;
 

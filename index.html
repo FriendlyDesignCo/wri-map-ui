@@ -67,7 +67,7 @@
                   <span>Map Controls</span>
                 </div>
               </div>
-              <div id="map-control-container">
+              <div id="map-control-container"><!-- Map Control Menu -->
                 <ul>
                   <li><span>Legend</span>
                     <ul>
@@ -76,10 +76,24 @@
                       <li><span>Another Item</span></li>
                     </ul>
                   </li>
-                  <li><span>Basemap</span></li>
-                  <li><span>Layers</span></li>
+                  <li><span>Basemap</span>
+                    <ul>
+                      <li><span>Item</span></li>
+                      <li><span>Another Item</span></li>
+                      <li><span>Another Item</span></li>
+                    </ul>
+                  </li>
+                  <li><span>Layers</span>
+                    <select name="layers" id="layers"><!-- an "id" attribute is required -->
+                      <option value="1">Imagery</option>
+                      <option value="2">Imagery with Labels</option>
+                      <option value="3">Streets</option>
+                      <option value="4">Topographic</option>
+                    </select>
+                  </li>
+                  <li><span>No Children</span</li>
                 </ul>
-              </div>
+              </div><!-- End Map Control Menu -->
             </div><!-- End Map Controls -->
 
           </div><!-- End Map Container -->
