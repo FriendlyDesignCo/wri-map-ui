@@ -184,9 +184,18 @@
           display:inline-block;
           line-height:64px;
           padding-right:20px;
+
+          transition:opacity 0.25s ease-in-out;
+          -moz-transition:opacity 0.25s ease-in-out;
+          -webkit-transition:opacity 0.25s ease-in-out;
+          -o-transition:opacity 0.25s ease-in-out;
         }
         &:not(.selected) .fa-check {
           opacity:0;
+        }
+        &:not(.selected):hover .fa-check {
+          color:#ccc;
+          opacity:0.2;
         }
         &.selected .fa-check {
           opacity:1;
