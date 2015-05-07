@@ -118,14 +118,19 @@
       }
       if ($(this).find('select').length > 0) {
         $("#map-control-container").append('<ul data-select-id="#' + $(this).find('select').first().attr('id') + '" class="second-container"></ul>');
+        // Create a row for each <option>
         $(this).find('select option').each(function(){
           var newElement = $("<li data-value='" + $(this).attr('value') + "' class='select-option'><span>" + $(this).html() + "</span><div class='circle'></div><div class='clearfix'></div></li>");
           if ($(this).is(':selected')) {
             newElement.addClass('selected');
           }
+          if ($(this).data('icon') !== undefined) {
+            newElement.find('span').prepend($("<img src='" + $(this).data('icon') + "'>"));
+          }
           $("#map-control-container ul.second-container").append(newElement);
         });
 
+        // Handle clicks on an option row
         $("#map-control-container ul.second-container").on('click','li.select-option',function(e){
           e.preventDefault();
           var selectElement = $($(this).parent().data('select-id'));

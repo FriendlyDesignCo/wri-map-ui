@@ -133,6 +133,14 @@
           padding-right:20px;
         }
 
+        /* Icons */
+        img {
+          display: inline-block;
+          vertical-align: middle;
+          padding-right: 10px;
+          max-height: 80%;
+        }
+
         /* Dealing with <select>s */
         .circle {
           float:right;
