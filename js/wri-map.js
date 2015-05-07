@@ -120,7 +120,7 @@
         $("#map-control-container").append('<ul data-select-id="#' + $(this).find('select').first().attr('id') + '" class="second-container"></ul>');
         // Create a row for each <option>
         $(this).find('select option').each(function(){
-          var newElement = $("<li data-value='" + $(this).attr('value') + "' class='select-option'><span>" + $(this).html() + "</span><div class='circle'></div><div class='clearfix'></div></li>");
+          var newElement = $("<li data-value='" + $(this).attr('value') + "' class='select-option'><span>" + $(this).html() + "</span><i class='fa fa-check'></i><div class='clearfix'></div></li>");
           if ($(this).is(':selected')) {
             newElement.addClass('selected');
           }

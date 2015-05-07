@@ -179,6 +179,19 @@
           background:#fff;
           opacity:0.1;
         }
+        .fa-check {
+          float:right;
+          display:inline-block;
+          line-height:64px;
+          padding-right:20px;
+        }
+        &:not(.selected) .fa-check {
+          opacity:0;
+        }
+        &.selected .fa-check {
+          opacity:1;
+          color:#eeaa1f;
+        }
         select {
           display:none;
         }
