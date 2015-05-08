@@ -1,18 +1,4 @@
 (function($){
-  $.fn.makeAbsolute = function(rebase) {
-    return this.each(function() {
-        var el = $(this);
-        var pos = el.position();
-        el.css({ position: "absolute",
-            marginLeft: 0, marginTop: 0,
-            top: pos.top, right: 0 });
-        if (rebase)
-            el.remove().appendTo("body");
-    });
-  };
-}(jQuery));
-
-(function($){
 
   $.fn.wriMap = function(options) {
     var defaults = {
@@ -70,7 +56,6 @@
       $.proxy(settings.onZoomOut, this)();
     });
 
-    $($("#right-controls .button:not(#search-expandable)").get().reverse()).each(function(){ $(this).makeAbsolute(); });
     $(settings.searchExpandButton).click(function(e){
       $("#search-expandable").addClass('expanded');
       setTimeout(function(){

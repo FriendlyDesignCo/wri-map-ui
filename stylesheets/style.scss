@@ -7,6 +7,8 @@ $gray: #dbdbdb;
 $transparentGray: rgba(63,63,63,0.45);
 $orange: #efab00;
 
+$mobileBreakpoint: 680px;
+
 @import 'main-menu.scss';
 @import 'ribbon.scss';
 

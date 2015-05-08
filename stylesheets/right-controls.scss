@@ -35,6 +35,21 @@
       margin-top:10px;
       padding-bottom:5px;
     }
+
+    &:nth-child(2) {
+      position: absolute;
+      margin-left: 0px;
+      margin-top: 0px;
+      top: 65px;
+      right: 0px;
+    }
+    &:nth-child(3) {
+      position: absolute;
+      margin-left: 0px;
+      margin-top: 0px;
+      top: 121px;
+      right: 0px;
+    }
   }
 
   #search-expandable {
