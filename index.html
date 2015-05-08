@@ -74,6 +74,7 @@
                       <li><span>Sub Heading</span></li>
                       <li class="spacer"></li>
                       <li><span>Another Item</span></li>
+                      <li><span>Slider Value</span><div class="slider" id="demo-slider"></div></li>
                     </ul>
                   </li>
                   <li><span>Basemap</span>
@@ -147,15 +148,33 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="js/wri-map.js"></script>
-    <script src="js/ramjet.min.js"></script>
+    <script src="js/jquery.nouislider.min.js"></script>
     <script type="text/javascript">
       var zoomLevel = 1;
       var checkZoomButtonsEnabled = function(){
         if (zoomLevel > 2) $("#zoom-in-button").addClass('disabled'); else $("#zoom-in-button").removeClass('disabled');
         if (zoomLevel < 1) $("#zoom-out-button").addClass('disabled'); else $("#zoom-out-button").removeClass('disabled');
       };
+
+      // Slider init function - for more details on noUIslider, see http://refreshless.com/nouislider/
+      var sliderInit = function() {
+        if ($(this).attr('id') == 'demo-slider') {
+          $(this).noUiSlider({
+            start: 20,
+            step: 5,
+            range: {
+              'min': 0,
+              'max': 100
+            },
+          }).on('change', function(){
+            console.log("Slider set to " + $(this).val());
+          });
+        }
+      };
+
       jQuery(function($){
         $("body").wriMap({
+          onSliderInit: sliderInit,
           onZoomHome: function(){ zoomLevel = 1; checkZoomButtonsEnabled(); console.log("Zooming to home (1)"); },
           onZoomIn:   function(){ if ($(this).hasClass('disabled')) return; zoomLevel++; checkZoomButtonsEnabled(); console.log("Zoomed in to " + zoomLevel); },
           onZoomOut:  function(){ if ($(this).hasClass('disabled')) return; zoomLevel--; checkZoomButtonsEnabled(); console.log("Zoomed out to " + zoomLevel); },

@@ -215,6 +215,17 @@
           display:none;
         }
 
+        /* Slider */
+        &.has-slider {
+          line-height:50px;
+          height:110px;
+
+          .slider {
+            width:90%;
+            margin:54px auto 0;
+          }
+        }
+
         /* Nested menus */
         &.has-children {
           cursor:pointer;

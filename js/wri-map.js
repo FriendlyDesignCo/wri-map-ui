@@ -15,6 +15,7 @@
 
       mapControlsToggleButton: ".map-controls-toggle-button",
 
+      onSliderInit: function(){},
       onZoomHome: function(){},
       onZoomIn: function(){},
       onZoomOut: function(){},
@@ -139,9 +140,12 @@
           $(this).toggleClass('selected');
           var checkbox = $($(this).data('target-id'));
           checkbox.prop('checked', !checkbox.is(':checked'));
-          console.log(checkbox.is(':checked'));
-          console.log(checkbox);
         });
+      });
+      // Sliders
+      $("#map-control-container .second-container .slider").each(function(){
+        $(this).parent().addClass('has-slider');
+        $.proxy(settings.onSliderInit, this)();
       });
 
       $("#map-control-container").addClass('second-page').css({'max-height':$('ul.second-container').height()});
