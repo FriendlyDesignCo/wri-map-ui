@@ -1,3 +1,3 @@
 #!/bin/sh
 
-sass --watch stylesheets/style.scss:style.css
+sass --watch stylesheets/style.scss:wri-map.css
