@@ -206,8 +206,13 @@
         select {
           display:none;
         }
-        &.select-option {
+        &.select-option, &.checkbox {
           cursor:pointer;
+        }
+
+        /* Dealing with checkboxes */
+        input[type=checkbox] {
+          display:none;
         }
 
         /* Nested menus */

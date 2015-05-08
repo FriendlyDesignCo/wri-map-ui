@@ -116,6 +116,7 @@
       if ($(this).find('ul').length > 0) {
         $("#map-control-container").append($(this).find('ul').clone().addClass('second-container'));
       }
+      // Select
       if ($(this).find('select').length > 0) {
         $("#map-control-container").append('<ul data-select-id="#' + $(this).find('select').first().attr('id') + '" class="second-container"></ul>');
         // Create a row for each <option>
@@ -139,6 +140,25 @@
           $(this).addClass('selected');
         });
       }
+      // Checkboxes
+      $("#map-control-container .second-container input[type=checkbox]").each(function(){
+        var listItem = $(this).parent();
+        listItem.addClass('checkbox');
+        if ($(this).prop('checked'))
+          listItem.addClass('selected');
+        listItem.data('target-id', '#'+$(this).attr('id'));
+        $(this).after($("<div class='circle'></div>"));
+        listItem.find('input[type=checkbox]').remove();
+
+        listItem.click(function(e){
+          $(this).toggleClass('selected');
+          var checkbox = $($(this).data('target-id'));
+          checkbox.prop('checked', !checkbox.is(':checked'));
+          console.log(checkbox.is(':checked'));
+          console.log(checkbox);
+        });
+      });
+
       $("#map-control-container").addClass('second-page').css({'max-height':$('ul.second-container').height()});
 
       // Back button
