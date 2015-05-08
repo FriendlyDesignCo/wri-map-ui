@@ -15,6 +15,17 @@
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
 
+  body:not(.map-controls-open) & {
+    cursor:pointer;
+    &:hover {
+      color:#ddd;
+    }
+  }
+
+  -webkit-box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.15);
+  -moz-box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.15);
+  box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.15);
+
   #map-control-header {
     position:relative;
     background:#0692c3;
@@ -44,10 +55,6 @@
         padding:10px;
         width:30px;
 
-        &:hover {
-          color:#ccc;
-        }
-
         &.fa-chevron-left {
           font-size:18px;
           line-height:23px;
@@ -60,6 +67,7 @@
         font-weight:bold;
         text-align:center;
         padding-right:10px;
+        padding-bottom:13px;
       }
     }
 

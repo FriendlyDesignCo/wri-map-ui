@@ -80,6 +80,13 @@
     $(settings.mapControlsToggleButton).click(function(e){
       $("body").toggleClass('map-controls-open');
       $("#map-control-container").css({'max-height':''}).removeClass('second-page');
+      e.stopPropagation();
+    });
+    $("#map-control-main-header").click(function(e){
+      if (!$("body").hasClass('map-controls-open')) {
+        $("body").toggleClass('map-controls-open');
+        $("#map-control-container").css({'max-height':''}).removeClass('second-page');
+      }
     });
 
     $("#map-control-container").find('ul > li').each(function(){
