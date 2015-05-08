@@ -121,4 +121,22 @@
       }
     }
   }
+
+  @media screen and (max-width:$mobileBreakpoint) {
+
+    top:initial;
+    bottom:20px;
+
+    .button {
+      &:not(#home-button-container) {
+        display:none;
+      }
+
+      &#home-button-container {
+        top:initial;
+        bottom:0;
+        margin-bottom:0;
+      }
+    }
+  }
 }
