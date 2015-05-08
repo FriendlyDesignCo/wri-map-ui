@@ -10,10 +10,10 @@
   box-sizing:border-box;
   overflow:hidden;
 
-  transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
 
   body:not(.map-controls-open) & {
     cursor:pointer;
@@ -30,10 +30,10 @@
     position:relative;
     background:#0692c3;
 
-    transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
 
     &.second-page {
       transform:translate3d(-100%,0,0);
@@ -57,7 +57,7 @@
 
         &.fa-chevron-left {
           font-size:18px;
-          line-height:23px;
+          line-height:26px;
         }
       }
       span {
@@ -67,6 +67,10 @@
         font-weight:bold;
         text-align:center;
         padding-right:10px;
+        white-space:nowrap;
+        .map-controls-open & {
+          padding-right:32px;
+        }
         padding-bottom:13px;
       }
     }
@@ -77,6 +81,7 @@
       right:0;
       margin-right:-100%;
       padding:0;
+      padding-bottom:1px;
       background:#252525;
 
       /* Don't show icons when they're in the menu header */
@@ -96,10 +101,10 @@
     float:left;
     position:relative;
 
-    transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
 
     &.second-page {
       transform:translate3d(-100%,0,0);
@@ -274,6 +279,10 @@
           }
         }
 
+        &.has-children:hover, &.checkbox:hover, &.select-option:hover {
+          color:#ccc;
+        }
+
         &.spacer {
           height:20px;
           background:rgba(70, 70, 68, 0.3);
@@ -291,12 +300,16 @@
   }
 
   .map-controls-open & {
-    width:300px;
+    width:350px;
     border-radius:0;
     @include shadows;
 
     #map-control-header {
       background:#252525;
+      color:#999;
+      i {
+        color:#57585b;
+      }
     }
 
     #map-control-container {
