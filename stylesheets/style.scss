@@ -32,6 +32,15 @@ textarea, input { outline: none; }
   box-shadow: $shadowHeight $shadowHeight 0px 0px rgba(0,0,0,0.15);
 }
 
+#crop-container {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  overflow-x:hidden;
+}
+
 /* Container for the offscreen menu */
 #full-container {
   width:100%;
