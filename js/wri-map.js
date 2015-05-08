@@ -1,3 +1,26 @@
+(function($){}(
+  $.fn.wriModal = function(action) {
+    if (action === undefined)
+      action = 'open';
+    if (action == 'open') {
+      if ($("#modal-overlay").length > 0)
+        $("#modal-overlay").remove();
+      $("body").append('<div id="modal-overlay"></div>');
+      $("#modal-overlay").append($(this).clone().append('<i class="fa fa-times"></i>').fadeIn());
+      $("#modal-overlay").click(function(e){
+        if ($(e.target).is('#modal-overlay'))
+          $(this).wriModal('close');
+      });
+      $("#modal-overlay .fa-times").click(function(){
+        $(this).wriModal('close');
+      });
+    }
+    if (action == 'close') {
+      $("#modal-overlay").fadeOut(300, function(){ $(this).remove(); });
+    }
+  }
+));
+
 (function($){
 
   $.fn.wriMap = function(options) {
@@ -28,6 +51,7 @@
     initMainMenu(settings);
     initRightButtons(settings);
     initMapControls(settings);
+    initModals(settings);
   };
 
   function initRibbon(settings) {
@@ -162,6 +186,14 @@
         $("#map-control-header").removeClass('second-page');
         $("#map-control-container").css({'max-height':''}).removeClass('second-page');
       });
+    });
+  }
+
+  function initModals(settings) {
+    $(".modal").hide();
+    $("[rel=modal]").click(function(e){
+      e.preventDefault();
+      $($(this).data('target')).wriModal();
     });
   }
 
