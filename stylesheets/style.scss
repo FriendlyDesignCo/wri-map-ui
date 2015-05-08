@@ -26,10 +26,10 @@ textarea, input { outline: none; }
   border-radius:3px;
 }
 
-@mixin shadows {
-  -webkit-box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.35);
-  -moz-box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.35);
-  box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.35);
+@mixin shadows($shadowHeight: 2px) {
+  -webkit-box-shadow: $shadowHeight $shadowHeight 0px 0px rgba(0,0,0,0.15);
+  -moz-box-shadow: $shadowHeight $shadowHeight 0px 0px rgba(0,0,0,0.15);
+  box-shadow: $shadowHeight $shadowHeight 0px 0px rgba(0,0,0,0.15);
 }
 
 /* Container for the offscreen menu */
