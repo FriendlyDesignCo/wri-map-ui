@@ -20,6 +20,7 @@ body {
 }
 
 .clearfix { clear:both; }
+textarea, input { outline: none; }
 
 .button {
   border-radius:3px;
