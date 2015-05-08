@@ -10,142 +10,142 @@
   </head>
   <body>
     <div id="crop-container">
-    <div id="full-container">
-      <div id="main-container"><!-- Start Main Container -->
-        <div id="menu-open-overlay"></div>
+      <div id="full-container">
+        <div id="main-container"><!-- Start Main Container -->
+          <div id="menu-open-overlay"></div>
 
-        <div id="ribbon"><!-- Ribbon -->
-          A project convened by <a href="#partner" target="_blank">World Resources Institute</a>
-        </div><!-- End Ribbon -->
+          <div id="ribbon"><!-- Ribbon -->
+            A project convened by <a href="#partner" target="_blank">World Resources Institute</a>
+          </div><!-- End Ribbon -->
 
-        <div id="header-container">
-          <div id="header"><!-- Header -->
-            <div id="map-title">
-              <h1>Indonesia Fires and Concessions</h1>
-            </div>
-            <div id="header-right">
-              <div id="menu-open-button">
-                <div class="border"></div>
+          <div id="header-container">
+            <div id="header"><!-- Header -->
+              <div id="map-title">
+                <h1>Indonesia Fires and Concessions</h1>
+              </div>
+              <div id="header-right">
+                <div id="menu-open-button">
+                  <div class="border"></div>
+                  <div class="button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <p>Menu</p>
+                  </div>
+                </div>
+                <a href="#partner" target="_blank"><img id="partner-logo" src="images/wri_logo.png" title="World Resources Institute"></a>
+                <div class="clearfix"></div>
+              </div>
+            </div><!-- End Header -->
+          </div>
+
+          <div id="body-container">
+            <div id="map-container"><!-- Map Container -->
+
+              <!-- Sample Map, remove before use -->
+              <div id="map"><div style="width:100%;height:100%;background-image:url('images/sample_map.png');background-size:cover;"></div></div>
+
+              <div id="right-controls"><!-- Right-Side Controls -->
+                <div class="button" id="search-expandable"><i class="fa fa-search" id="search-button"></i>
+                  <div id="search-elements">
+                    <form>
+                      <input type="text" id="search-input" placeholder="Search">
+                    </form>
+                    <i class="fa fa-times" id="search-collapse-button"></i>
+                  </div>
+                </div>
+                <div class="button" id="home-button-container"><i class="fa fa-home" id="home-button"></i></div>
                 <div class="button">
-                  <span class="bar"></span>
-                  <span class="bar"></span>
-                  <span class="bar"></span>
-                  <p>Menu</p>
+                  <i class="fa fa-plus" id="zoom-in-button"></i>
+                  <i class="fa fa-minus" id="zoom-out-button"></i><!-- Add the "disabled" class to indicate no further zooming is possible -->
                 </div>
-              </div>
-              <a href="#partner" target="_blank"><img id="partner-logo" src="images/wri_logo.png" title="World Resources Institute"></a>
-              <div class="clearfix"></div>
-            </div>
-          </div><!-- End Header -->
-        </div>
+              </div><!-- End Right-Side Controls -->
 
-        <div id="body-container">
-          <div id="map-container"><!-- Map Container -->
-
-            <!-- Sample Map, remove before use -->
-            <div id="map"><div style="width:100%;height:100%;background-image:url('images/sample_map.png');background-size:cover;"></div></div>
-
-            <div id="right-controls"><!-- Right-Side Controls -->
-              <div class="button" id="search-expandable"><i class="fa fa-search" id="search-button"></i>
-                <div id="search-elements">
-                  <form>
-                    <input type="text" id="search-input" placeholder="Search">
-                  </form>
-                  <i class="fa fa-times" id="search-collapse-button"></i>
+              <div id="map-controls"><!-- Map Controls -->
+                <div id="map-control-header">
+                  <div id="map-control-main-header">
+                    <i class="fa fa-sliders map-controls-toggle-button"></i>
+                    <span>Map Controls</span>
+                  </div>
                 </div>
-              </div>
-              <div class="button" id="home-button-container"><i class="fa fa-home" id="home-button"></i></div>
-              <div class="button">
-                <i class="fa fa-plus" id="zoom-in-button"></i>
-                <i class="fa fa-minus" id="zoom-out-button"></i><!-- Add the "disabled" class to indicate no further zooming is possible -->
-              </div>
-            </div><!-- End Right-Side Controls -->
+                <div id="map-control-container"><!-- Map Control Menu -->
+                  <ul>
+                    <li><span>Legend</span>
+                      <ul>
+                        <li><span>Sub Heading</span></li>
+                        <li class="spacer"></li>
+                        <li><span>Another Item</span></li>
+                        <li><span>Slider Value</span><div class="slider" id="demo-slider"></div></li>
+                      </ul>
+                    </li>
+                    <li><span>Basemap</span>
+                      <ul>
+                        <li><span>Item</span></li>
+                        <li><span>Another Item</span>
+                          <input type="checkbox" id="checkbox-1"><!-- an "id" attribute is required -->
+                        </li>
+                        <li><span>Another Item (Checked)</span>
+                          <input type="checkbox" id="checkbox-2" checked>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><span><img src="images/sample_icon_1.png">Layers (select)</span>
+                      <select name="layers" id="layers"><!-- an "id" attribute is required -->
+                        <option value="1" data-icon="images/sample_icon_1.png">Imagery</option>
+                        <option value="2" data-icon="images/sample_icon_2.png">Imagery with Labels</option>
+                        <option value="3">Streets</option>
+                        <option value="4">Topographic</option>
+                      </select>
+                    </li>
+                    <li><span>No Children</span</li>
+                  </ul>
+                </div><!-- End Map Control Menu -->
+              </div><!-- End Map Controls -->
 
-            <div id="map-controls"><!-- Map Controls -->
-              <div id="map-control-header">
-                <div id="map-control-main-header">
-                  <i class="fa fa-sliders map-controls-toggle-button"></i>
-                  <span>Map Controls</span>
-                </div>
-              </div>
-              <div id="map-control-container"><!-- Map Control Menu -->
+            </div><!-- End Map Container -->
+          </div>
+
+        </div><!-- End Main Container -->
+        <div id="main-menu">
+          <nav><!-- Primary Navigation -->
+            <ul>
+              <li><a href="#">Page Link</a></li>
+              <li><a href="#">Page Link</a>
                 <ul>
-                  <li><span>Legend</span>
-                    <ul>
-                      <li><span>Sub Heading</span></li>
-                      <li class="spacer"></li>
-                      <li><span>Another Item</span></li>
-                      <li><span>Slider Value</span><div class="slider" id="demo-slider"></div></li>
-                    </ul>
-                  </li>
-                  <li><span>Basemap</span>
-                    <ul>
-                      <li><span>Item</span></li>
-                      <li><span>Another Item</span>
-                        <input type="checkbox" id="checkbox-1"><!-- an "id" attribute is required -->
-                      </li>
-                      <li><span>Another Item (Checked)</span>
-                        <input type="checkbox" id="checkbox-2" checked>
-                      </li>
-                    </ul>
-                  </li>
-                  <li><span><img src="images/sample_icon_1.png">Layers (select)</span>
-                    <select name="layers" id="layers"><!-- an "id" attribute is required -->
-                      <option value="1" data-icon="images/sample_icon_1.png">Imagery</option>
-                      <option value="2" data-icon="images/sample_icon_2.png">Imagery with Labels</option>
-                      <option value="3">Streets</option>
-                      <option value="4">Topographic</option>
-                    </select>
-                  </li>
-                  <li><span>No Children</span</li>
+                  <li><a href="#">Interior Page Link</a></li>
+                  <li class="active"><a href="#">Current Page Link</a></li>
                 </ul>
-              </div><!-- End Map Control Menu -->
-            </div><!-- End Map Controls -->
+              </li>
+              <li><a href="#">Page Link</a></li>
+              <li><a href="#">Page Link</a></li>
+            </ul>
+          </nav><!-- End Primary Navigation -->
 
-          </div><!-- End Map Container -->
+          <hr>
+
+          <div class="orange-box">
+            <p>Share</p>
+          </div>
+
+          <p><a href="#">Footer Items</a></p>
+          <p><a href="#">Navigation Item</a></p>
+          <p><a href="#">Navigation Item</a></p>
+
+          <hr>
+
+          <p class="sponsor"><a href="#"><img src="images/wri_logo_white.png" title="World Resource Institute"></a></p>
+          <p class="sponsor"><a href="#">Other Sponsor Name or Logo</a></p>
+
+          <p class="contact-info">
+            World Resources Institute<br>
+            10 G Street NE Suite 800<br>
+            Washington, DC 20002, USA<br>
+            <br>
+            PHONE +1 (202) 729-7600<br>
+            FAX +1 (202) 729-7686
+          </p>
         </div>
-
-      </div><!-- End Main Container -->
-      <div id="main-menu">
-        <nav><!-- Primary Navigation -->
-          <ul>
-            <li><a href="#">Page Link</a></li>
-            <li><a href="#">Page Link</a>
-              <ul>
-                <li><a href="#">Interior Page Link</a></li>
-                <li class="active"><a href="#">Current Page Link</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Page Link</a></li>
-            <li><a href="#">Page Link</a></li>
-          </ul>
-        </nav><!-- End Primary Navigation -->
-
-        <hr>
-
-        <div class="orange-box">
-          <p>Share</p>
-        </div>
-
-        <p><a href="#">Footer Items</a></p>
-        <p><a href="#">Navigation Item</a></p>
-        <p><a href="#">Navigation Item</a></p>
-
-        <hr>
-
-        <p class="sponsor"><a href="#"><img src="images/wri_logo_white.png" title="World Resource Institute"></a></p>
-        <p class="sponsor"><a href="#">Other Sponsor Name or Logo</a></p>
-
-        <p class="contact-info">
-          World Resources Institute<br>
-          10 G Street NE Suite 800<br>
-          Washington, DC 20002, USA<br>
-          <br>
-          PHONE +1 (202) 729-7600<br>
-          FAX +1 (202) 729-7686
-        </p>
       </div>
-    </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
