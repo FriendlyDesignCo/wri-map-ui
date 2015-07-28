@@ -138,10 +138,16 @@ nav{
 		margin-bottom: 10px;
 	}
 	p.large{
-		font-size:1.5em;
+		font-size:150%;
+		@media screen and (max-width: $small-screen) {
+			font-size: 120%;
+		}
 	}
 	hr{
 		margin: 75px 0;
+		@media screen and (max-width: $small-screen) {
+			margin: 25px 0;
+		}
 	}
 
 	pre{
@@ -151,15 +157,20 @@ nav{
 	.colors{
 		list-style: none;
 		padding-left: 0px;
-	}
-	.colors li:before{
-		display: inline-block;
+
+		li:before{
+		display: block;
+		float: left;
 		content: ".";
 		text-indent: -9999px;
 		height: 25px;
 		width: 25px;
 		margin: 0 10px 10px;
 		border: 1px solid #ccc;
+		}
+		li{
+			clear: both;
+		}
 	}
 	.color-orange:before{
 		background-color: #f0ab00;

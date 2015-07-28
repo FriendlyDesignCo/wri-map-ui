@@ -7385,24 +7385,37 @@ nav {
 }
 /* line 140, ../sass/app.scss */
 .content p.large {
-  font-size: 1.5em;
+  font-size: 150%;
 }
-/* line 143, ../sass/app.scss */
+@media screen and (max-width: 768px) {
+  /* line 140, ../sass/app.scss */
+  .content p.large {
+    font-size: 120%;
+  }
+}
+/* line 146, ../sass/app.scss */
 .content hr {
   margin: 75px 0;
 }
-/* line 147, ../sass/app.scss */
+@media screen and (max-width: 768px) {
+  /* line 146, ../sass/app.scss */
+  .content hr {
+    margin: 25px 0;
+  }
+}
+/* line 153, ../sass/app.scss */
 .content pre {
   color: #fff;
 }
-/* line 151, ../sass/app.scss */
+/* line 157, ../sass/app.scss */
 .content .colors {
   list-style: none;
   padding-left: 0px;
 }
-/* line 155, ../sass/app.scss */
+/* line 161, ../sass/app.scss */
 .content .colors li:before {
-  display: inline-block;
+  display: block;
+  float: left;
   content: ".";
   text-indent: -9999px;
   height: 25px;
@@ -7410,27 +7423,31 @@ nav {
   margin: 0 10px 10px;
   border: 1px solid #ccc;
 }
-/* line 164, ../sass/app.scss */
+/* line 171, ../sass/app.scss */
+.content .colors li {
+  clear: both;
+}
+/* line 175, ../sass/app.scss */
 .content .color-orange:before {
   background-color: #f0ab00;
 }
-/* line 167, ../sass/app.scss */
+/* line 178, ../sass/app.scss */
 .content .color-lgrey:before {
   background-color: #dbdbdb;
 }
-/* line 170, ../sass/app.scss */
+/* line 181, ../sass/app.scss */
 .content .color-mgrey:before {
   background-color: #4c4c4c;
 }
-/* line 173, ../sass/app.scss */
+/* line 184, ../sass/app.scss */
 .content .color-dgrey:before {
   background-color: #3f3f3f;
 }
-/* line 176, ../sass/app.scss */
+/* line 187, ../sass/app.scss */
 .content .color-blue:before {
   background-color: #0692c3;
 }
-/* line 179, ../sass/app.scss */
+/* line 190, ../sass/app.scss */
 .content .color-dtext:before {
   background-color: #231f20;
 }
