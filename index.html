@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>WRI Map UI Guide</title>
+
+	<link rel="shortcut icon" href="http://www.wri.org/sites/default/files/favicon.ico" type="image/vnd.microsoft.icon">
+	<link rel="stylesheet" href="stylesheets/app.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+
+	<script src="javascripts/vendor/custom.modernizr.js"></script>
+
+</head>
+<body>
+
+
+<div class="navigation" data-magellan-expedition="fixed">
+  <dl class="sub-nav">
+    <dd data-magellan-arrival="overview">
+    	<a href="#overview">
+    		Overview
+    	</a>
+    </dd>
+    <dd data-magellan-arrival="started">
+    	<a href="#started">
+    		Getting Started
+    	</a>
+    </dd>
+    <dd data-magellan-arrival="icons">
+    	<a href="#icons">
+    		Icons
+    	</a>
+    </dd>
+    <dd data-magellan-arrival="headings">
+    	<a href="#headings">
+    		Headings and Branding
+    	</a>
+    </dd>
+    <dd data-magellan-arrival="navigation">
+    	<a href="#navigation">
+    		Site Navigation
+    	</a>
+    </dd>
+    <dd data-magellan-arrival="typography">
+    	<a href="#typography">
+    		Typography &amp; Colors
+    	</a>
+    </dd>
+    <dd data-magellan-arrival="map">
+    	<a href="#map">
+    		Map Controls
+    	</a>
+    </dd>
+  </dl>
+</div>
+
+
+
+
+		<div class="row">
+			<div class="large-12 large-centered columns">
+					<img class="section-img" src="images/overview.jpg">
+				</div>
+			</div>
+	<div class="row">
+		<div class="large-10 large-centered columns">
+			<h2 data-magellan-destination="overview">Overview</h2>
+			<p class="large">The purpose of this project and codebase is to have a consistent schema across all WRI and WRI-related maps. This will aid in consistency of the experience for users as well as create an easier starting point for developers.</p>
+			<p class="large">This framework provides default styling and some common mapping and interface functionality to incorporate into your projects. It provides a layout which includes default typography, space for the required branding and partner information, common map function buttons (home, zoom in, zoom out), an integrated search bar, and controls for defining map options.</p>
+			<hr>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 large-centered columns">
+
+			<img class="section-img" src="images/github.jpg">
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-10 large-centered columns">
+			<h2 data-magellan-destination="started">Getting Started</h2>
+			<p>The codebase lives at <a href="https://github.com/FriendlyDesignCo/wri-map-ui" target="_blank">https://github.com/FriendlyDesignCo/wri-map-ui</a>. You can clone this repository and begin customizing for your particular project. Should you find any issues, please note them in the core repository so we can always be updating our work.</p>
+			<h3>Files Provided</h3>
+			<ul>
+				<li>
+					<strong>index.html</strong> - A "kitchen sink" framework outline you can use as a starting point in your project. It includes demo elements of various types, and all of the default page elements.
+				</li>
+				<li>
+					<strong>wri-map.css</strong> - The framework's default stylesheet, defining the layout and all the elements used. This file has no external styling dependencies.
+				</li>
+				<li>
+					<strong>js/wri-map.js</strong> - The framework's default JavaScript library, which operates as a jQuery plugin. It implements the functionality necessary for all the built-in elements. Instructions for customization are available below.
+				</li>
+			</ul>
+			<hr>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 large-centered columns">
+			<img class="section-img" src="images/icons.jpg">
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-10 large-centered columns">
+			<h2 data-magellan-destination="icons">Icons</h2>
+			<p>This project integrates the Font Awesome library set for its use of icons. Use this set whenever possible to maintain consistency across all maps. Be sure to consult their <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">full icon list</a> before creating any other icons. You can learn more about Font Awesome <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">here</a>.</p>
+			<hr>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 large-centered columns">
+
+			<img class="section-img" src="images/headings.jpg">
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-10 large-centered columns">
+			<h2 data-magellan-destination="headings">Headings and Branding</h2>
+			<p>The heading area contains the following elements:</p>
+
+			<ul>
+				<li>Title (to be placed as an "h1" in #map-title)</li>
+				<li>Subtitle (optional, to be placed under the main title)</li>
+				<li>Main branding (to be placed in #header-right as #partner-logo)</li>
+				<li>Navigation</li>
+			</ul>
+
+			<h3>Branding</h3>
+			<p>This interface is designed to be primarily branded as part of one project or funding source at any given time. In other words, the logo area for main branding should be used for the primary brand. In the mobile version, this and all branding moves to the sidebar menu to save visual real estate.</p>
+
+			<p>There is an optional WRI "ribbon" that can be added at the top of the page. The code for this is to be placed directly above 'div#header-container':</p>
+
+
+<pre style="background:#0c1021;color:#f8f8f8; padding: 20px;"><span style="color:#7f90aa">&lt;<span style="color:#7f90aa">div</span> <span style="color:#7f90aa">id</span>=<span style="color:#61ce3c">"ribbon"</span>></span>
+A project convened by <span style="color:#7f90aa">&lt;<span style="color:#7f90aa">a</span> <span style="color:#7f90aa">href</span>=<span style="color:#61ce3c">"#partner"</span> <span style="color:#7f90aa">target</span>=<span style="color:#61ce3c">"_blank"</span>></span>World Resources Institute<span style="color:#7f90aa">&lt;/<span style="color:#7f90aa">a</span>></span>
+<span style="color:#7f90aa">&lt;/<span style="color:#7f90aa">div</span>></span>
+<span style="color:#7f90aa">&lt;<span style="color:#7f90aa">div</span> <span style="color:#7f90aa">id</span>=<span style="color:#61ce3c">"header-container"</span>></span>...<span style="color:#7f90aa">&lt;/<span style="color:#7f90aa">div</span>></span>
+</pre>
+
+		<p>Any further branding (partners, co-funders, etc.) should be contained in the sidebar menu.</p>
+		<hr>
+	</div>
+</div>
+<div class="row">
+	<div class="large-12 large-centered columns">
+
+		<img class="section-img" src="images/navigation.jpg">
+	</div>
+</div>
+<div class="row">
+	<div class="large-10 large-centered columns">
+		<h2 data-magellan-destination="navigation">Site Navigation</h2>
+		<p>Site navigation is defined as any links that do not manipulate the map and take the user to a different page. Only links that are site navigation should be put in the side menu. Conversely, the side menu is the only place the user should be able to find site navigation.</p>
+		<hr>
+	</div>
+</div>
+<div class="row">
+	<div class="large-12 large-centered columns">
+		<img class="section-img" src="images/typography.png">
+	</div>
+</div>
+<div class="row">
+	<div class="large-10 large-centered columns">
+		<h2 data-magellan-destination="typography">Typography &amp; Colors</h2>
+		<p>The framework uses two fonts, Open Sans Condensed and Helvetica.</p>
+		<div class="large-6 columns">
+				<p>Open Sans should be used for:</p>
+				<ul>
+					<li>Page Headings (Bold)</li>
+					<li>Page Subtitles (Light)</li>
+					<li>Side Menu Site Navigation (Regular)</li>
+					<li>Titles in Modal Windows</li>
+					<li>Titles in Popups</li>
+					<li>Title Areas</li>
+				</ul>
+			</div>
+		<div class="large-6 columns">
+			<p>Helvetica should be used for:</p>
+				<ul>
+					<li>Buttons (Bold)</li>
+					<li>Map Controls (Regular)</li>
+					<li>Paragraph Text (Regular)</li>
+					<li>Side Menu Secondary Links</li>
+					<li>Side Menu Footer Text</li>
+					<li>Modal Window detail information</li>
+					<li>Form fields (search bars, form fields, etc.)</li>
+					<li>Labels, paragraphs, etc.</li>
+				</ul>
+			</div>
+		<h3>Colors</h3>
+		<p>We use the standard colors of WRI throughout the experience.</p>
+		<ul class="colors">
+			<li class="color-orange">
+				<strong>WRI Orange (#f0ab00):
+				</strong> Used sparingly</li>
+			<li class="color-lgrey">
+				<strong>Light Grey (#dbdbdb):
+				</strong> Side Menu activation button, disabled buttons</li>
+			<li class="color-mgrey">
+				<strong>Medium Grey (#4c4c4c):
+				</strong> Side Menu background</li>
+			<li class="color-dgrey">
+				<strong>Dark grey (#3f3f3f):
+				</strong> Map Controls background</li>
+			<li class="color-blue">
+				<strong>Blue (#0692c3):
+				</strong> Button Color</li>
+			<li class="color-dtext">
+				<strong>Dark Text (#231f20):
+				</strong> Headlines, paragraph text</li>
+		</ul>
+		<hr>
+	</div>
+</div>
+<div class="row">
+	<div class="large-12 large-centered columns">
+
+		<img class="section-img" src="images/map-controls.jpg">
+	</div>
+</div>
+<div class="row">
+	<div class="large-10 large-centered columns">
+		<h2 data-magellan-destination="map">Map Controls</h2>
+		<p>In order to standardize the experience across all maps, we have consolidated all of the functionality that effects the content viewed on the map into one area, the "Map Controls" section. <strong>All manipulation of the content on the map should only be contained in this menu.</strong></p>
+		<p>The Map Controls area has been designed to contain as many menus and submenus as necessary for the desired project. It can accomodate the following form types:</p>
+		<ul>
+			<li>Sub-menus</li>
+			<li>Sliders</li>
+			<li>Multiple Selections</li>
+			<li>Single Selections</li>
+			<li>Labels</li>
+			<li>Labels with thumbnails</li>
+		</ul>
+		<hr>
+	</div>
+</div>
+<div class="row">
+	<div class="large-10 large-centered columns">
+		<h2>Contacts and Further Resources</h2>
+		<p>I dunno, something here?</p>
+		<hr>
+	</div>
+</div>
+
+<script>
+document.write('<script src=' +
+	('__proto__' in {} ? 'javascripts/vendor/zepto' : 'javascripts/vendor/jquery') +
+	'.js><\/script>')
+</script>
+
+<script src="javascripts/foundation/foundation.js"></script>
+
+<script src="javascripts/foundation/foundation.abide.js"></script>
+
+<script src="javascripts/foundation/foundation.alerts.js"></script>
+
+<script src="javascripts/foundation/foundation.clearing.js"></script>
+
+<script src="javascripts/foundation/foundation.cookie.js"></script>
+
+<script src="javascripts/foundation/foundation.dropdown.js"></script>
+
+<script src="javascripts/foundation/foundation.forms.js"></script>
+
+<script src="javascripts/foundation/foundation.interchange.js"></script>
+
+<script src="javascripts/foundation/foundation.joyride.js"></script>
+
+<script src="javascripts/foundation/foundation.magellan.js"></script>
+
+<script src="javascripts/foundation/foundation.orbit.js"></script>
+
+<script src="javascripts/foundation/foundation.placeholder.js"></script>
+
+<script src="javascripts/foundation/foundation.reveal.js"></script>
+
+<script src="javascripts/foundation/foundation.section.js"></script>
+
+<script src="javascripts/foundation/foundation.tooltips.js"></script>
+
+<script src="javascripts/foundation/foundation.topbar.js"></script>
+
+
+<script>
+$(document).foundation();
+</script>
+</body>
+</html>
