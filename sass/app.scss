@@ -80,6 +80,9 @@ nav{
 	.name h1 a{
 		color: #3f3f3f;
 		font-family: 'Open Sans Condensed', sans-serif;
+		@media screen and (max-width: $small-screen) {
+		width: 75%;
+		}
 	}
 
 	.right li a{
