@@ -1,0 +1,830 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300);
+#main-menu {
+  width: 300px;
+  margin-right: -300px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #4b4b4b;
+  box-sizing: border-box;
+  padding: 32px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  color: #fff; }
+  #main-menu hr {
+    border-color: #000;
+    border-bottom: none;
+    margin-top: 30px;
+    margin-bottom: 30px; }
+  #main-menu a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.25s;
+    -moz-transition: color 0.25s;
+    -webkit-transition: color 0.25s;
+    -o-transition: color 0.25s; }
+    #main-menu a:hover {
+      color: #cccccc; }
+  #main-menu nav li.active a {
+    color: #f0ab00; }
+  #main-menu nav ul {
+    margin: 0;
+    padding: 0; }
+    #main-menu nav ul li {
+      list-style: none;
+      line-height: 50px;
+      font-family: 'Open Sans Condensed', sans-serif;
+      font-weight: 300;
+      font-size: 27px; }
+      #main-menu nav ul li ul {
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 20px; }
+  #main-menu .orange-box {
+    background: #efab00;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 5px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+    padding: 15px; }
+    #main-menu .orange-box > p {
+      margin: 0; }
+  #main-menu .sponsor {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 900;
+    color: white;
+    font-size: 27px;
+    line-height: 0.9em;
+    transition: opacity 0.25s;
+    -moz-transition: opacity 0.25s;
+    -webkit-transition: opacity 0.25s;
+    -o-transition: opacity 0.25s; }
+    #main-menu .sponsor > img {
+      max-width: 100%; }
+    #main-menu .sponsor a {
+      display: block; }
+      #main-menu .sponsor a:hover {
+        opacity: 0.7; }
+  #main-menu .contact-info {
+    font-size: 12px; }
+
+#ribbon {
+  background: #dbdbdb;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: #333; }
+  #ribbon a {
+    color: #333;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.25s;
+    -webkit-transition: color 0.25s;
+    -o-transition: color 0.25s;
+    -moz-transition: color 0.25s; }
+    #ribbon a:hover {
+      color: #999; }
+  body:not(.has-ribbon) #ribbon {
+    display: none; }
+
+body {
+  font-size: 16px;
+  font-family: 'Helvetica', Arial, sans-serif;
+  overflow-x: hidden;
+  color: #333; }
+
+.clearfix {
+  clear: both; }
+
+textarea, input {
+  outline: none; }
+
+.button {
+  border-radius: 3px; }
+
+#crop-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-x: hidden; }
+
+/* Container for the offscreen menu */
+#full-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out; }
+  .menu-open #full-container {
+    transform: translate3d(-300px, 0, 0);
+    -webkit-transform: translate3d(-300px, 0, 0);
+    -o-transform: translate3d(-300px, 0, 0);
+    -moz-transform: translate3d(-300px, 0, 0);
+    -ms-transform: translate3d(-300px, 0, 0); }
+  #full-container #main-container #menu-open-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    background: #000;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.25s;
+    -webkit-transition: opacity 0.25s;
+    -o-transition: opacity 0.25s;
+    -moz-transition: opacity 0.25s; }
+    .menu-open #full-container #main-container #menu-open-overlay {
+      transition: opacity 0.25s;
+      -webkit-transition: opacity 0.25s;
+      -o-transition: opacity 0.25s;
+      -moz-transition: opacity 0.25s;
+      visibility: visible;
+      opacity: 0.3; }
+
+#main-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: table;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0); }
+  #main-container #ribbon, #main-container #header-container, #main-container #body-container {
+    display: table-row; }
+  #main-container #header {
+    height: 120px;
+    display: table;
+    border-bottom: 5px solid #efab00;
+    width: 100%; }
+    #main-container #header #map-title {
+      padding-left: 30px;
+      display: table-cell;
+      vertical-align: middle;
+      line-height: 0.9em; }
+      #main-container #header #map-title h1 {
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 0.9em; }
+        @media screen and (max-width: 1000px) {
+          #main-container #header #map-title h1 {
+            font-size: 40px; } }
+        @media screen and (max-width: 640px) {
+          #main-container #header #map-title h1 {
+            font-size: 30px; } }
+    #main-container #header #header-right {
+      display: table-cell;
+      width: 275px; }
+      #main-container #header #header-right #partner-logo img {
+        max-height: 100px;
+        width: auto;
+        border: 0; }
+      @media screen and (min-width: 560px) {
+        #main-container #header #header-right a {
+          height: 125px;
+          display: block;
+          line-height: 155px;
+          float: right;
+          margin-right: 20px; } }
+      @media screen and (max-width: 559px) {
+        #main-container #header #header-right {
+          width: 100px; }
+          #main-container #header #header-right a {
+            display: none; } }
+      #main-container #header #header-right #menu-open-button {
+        width: 90px;
+        cursor: pointer;
+        position: relative;
+        float: right; }
+        @media screen and (max-width: 480px) {
+          #main-container #header #header-right #menu-open-button {
+            width: 70px; } }
+        #main-container #header #header-right #menu-open-button .border {
+          border-left: 1px solid #dbdbdb;
+          height: 80px;
+          margin-top: 20px;
+          width: 1px;
+          position: absolute;
+          left: 0; }
+        #main-container #header #header-right #menu-open-button .button {
+          color: #dbdbdb;
+          text-transform: uppercase;
+          font-family: 'Open Sans Condensed', sans-serif;
+          font-weight: 700;
+          width: 90px;
+          text-align: center;
+          line-height: 5px;
+          margin-top: 32px;
+          font-size: 13px; }
+          @media screen and (max-width: 480px) {
+            #main-container #header #header-right #menu-open-button .button {
+              width: 70px; } }
+          #main-container #header #header-right #menu-open-button .button .bar {
+            display: inline-block;
+            width: 30px;
+            margin-left: 20px;
+            margin-right: 20px;
+            height: 3px;
+            background: #dbdbdb; }
+          #main-container #header #header-right #menu-open-button .button .bar + .bar {
+            margin-top: 5px; }
+  #main-container #body-container {
+    width: 100%;
+    height: 100%;
+    position: relative; }
+    #main-container #body-container #map-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      z-index: 1; }
+      #main-container #body-container #map-container #map {
+        width: 100%;
+        height: 100%; }
+      #main-container #body-container #map-container #right-controls {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 5;
+        padding-top: 65px; }
+        #main-container #body-container #map-container #right-controls .button {
+          background: rgba(0, 0, 0, 0.15);
+          font-size: 23px;
+          margin: 10px;
+          color: #fbfbfb;
+          text-align: center; }
+          #main-container #body-container #map-container #right-controls .button i {
+            padding: 10px;
+            padding-bottom: 6px;
+            display: block;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 28px;
+            line-height: 28px;
+            transition: color 0.1s;
+            -webkit-transition: color 0.1s;
+            -o-transition: color 0.1s;
+            -moz-transition: color 0.1s; }
+            #main-container #body-container #map-container #right-controls .button i:hover {
+              color: #aaa; }
+            #main-container #body-container #map-container #right-controls .button i.disabled {
+              color: #ccc; }
+          #main-container #body-container #map-container #right-controls .button i + i {
+            margin-top: 10px;
+            padding-bottom: 5px; }
+          #main-container #body-container #map-container #right-controls .button:nth-child(2) {
+            position: absolute;
+            margin-left: 0px;
+            margin-top: 0px;
+            top: 58px;
+            right: 0px; }
+          #main-container #body-container #map-container #right-controls .button:nth-child(3) {
+            position: absolute;
+            margin-left: 0px;
+            margin-top: 0px;
+            top: 106px;
+            right: 0px; }
+        #main-container #body-container #map-container #right-controls #search-expandable {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 50px;
+          overflow: hidden;
+          transition: all 0.5s ease-in-out;
+          -moz-transition: all 0.5s ease-in-out;
+          -webkit-transition: all 0.5s ease-in-out;
+          -o-transition: all 0.5s ease-in-out; }
+          #main-container #body-container #map-container #right-controls #search-expandable i.fa-search {
+            float: left; }
+          #main-container #body-container #map-container #right-controls #search-expandable i {
+            display: inline-block; }
+            #main-container #body-container #map-container #right-controls #search-expandable i:hover {
+              color: #aaa; }
+          #main-container #body-container #map-container #right-controls #search-expandable #search-elements {
+            opacity: 0;
+            display: none; }
+          #main-container #body-container #map-container #right-controls #search-expandable.expanded {
+            top: -1px;
+            right: 2px;
+            width: 300px;
+            z-index: 6;
+            background: #fff;
+            font-size: 23px;
+            color: #ccc;
+            width: 300px;
+            height: 45px;
+            border-radius: 0;
+            -webkit-box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.15);
+            -moz-box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.15);
+            box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.15); }
+            #main-container #body-container #map-container #right-controls #search-expandable.expanded #search-elements {
+              opacity: 1;
+              display: inline-block;
+              float: left;
+              margin-top: -3px; }
+              #main-container #body-container #map-container #right-controls #search-expandable.expanded #search-elements form {
+                display: inline-block; }
+              #main-container #body-container #map-container #right-controls #search-expandable.expanded #search-elements i {
+                padding-right: 0;
+                font-size: 28px;
+                padding-left: 8px; }
+              #main-container #body-container #map-container #right-controls #search-expandable.expanded #search-elements input {
+                display: inline-block;
+                background: transparent;
+                -webkit-appearance: none;
+                border-radius: 0;
+                border: 0;
+                height: 30px;
+                width: 198px;
+                box-sizing: border-box;
+                font-family: Helvetica, Arial, sans-serif;
+                font-size: 18px;
+                padding-left: 5px; }
+        @media screen and (max-width: 680px) {
+          #main-container #body-container #map-container #right-controls {
+            top: initial;
+            bottom: 20px; }
+            #main-container #body-container #map-container #right-controls .button:not(#home-button-container) {
+              display: none; }
+            #main-container #body-container #map-container #right-controls .button#home-button-container {
+              top: initial;
+              bottom: 0;
+              margin-bottom: 0; } }
+      #main-container #body-container #map-container #map-controls {
+        background: rgba(70, 70, 68, 0.3);
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        font-size: 23px;
+        color: #fff;
+        border-radius: 3px;
+        width: 165px;
+        box-sizing: border-box;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -webkit-box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.15);
+        box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.15); }
+        body:not(.map-controls-open) #main-container #body-container #map-container #map-controls {
+          cursor: pointer; }
+          body:not(.map-controls-open) #main-container #body-container #map-container #map-controls:hover {
+            color: #ddd; }
+        #main-container #body-container #map-container #map-controls #map-control-header {
+          position: relative;
+          background: #0692c3;
+          transition: all 0.3s ease-in-out;
+          -o-transition: all 0.3s ease-in-out;
+          -webkit-transition: all 0.3s ease-in-out;
+          -moz-transition: all 0.3s ease-in-out; }
+          #main-container #body-container #map-container #map-controls #map-control-header.second-page {
+            transform: translate3d(-100%, 0, 0);
+            -o-transform: translate3d(-100%, 0, 0);
+            -webkit-transform: translate3d(-100%, 0, 0);
+            -moz-transform: translate3d(-100%, 0, 0);
+            -ms-transform: translate3d(-100%, 0, 0); }
+          #main-container #body-container #map-container #map-controls #map-control-header > div {
+            display: table-row;
+            width: 100%;
+            padding: 10px; }
+            #main-container #body-container #map-container #map-controls #map-control-header > div i {
+              display: table-cell;
+              font-size: 23px;
+              cursor: pointer;
+              padding: 10px;
+              width: 30px; }
+              #main-container #body-container #map-container #map-controls #map-control-header > div i.fa-chevron-left {
+                font-size: 18px;
+                line-height: 26px; }
+            #main-container #body-container #map-container #map-controls #map-control-header > div span {
+              width: 100%;
+              display: table-cell;
+              font-size: 18px;
+              font-weight: bold;
+              text-align: center;
+              transition: padding-right 0.3s ease-in-out;
+              -o-transition: padding-right 0.3s ease-in-out;
+              -webkit-transition: padding-right 0.3s ease-in-out;
+              -moz-transition: padding-right 0.3s ease-in-out;
+              padding-right: 10px;
+              white-space: nowrap;
+              padding-bottom: 13px; }
+              .map-controls-open #main-container #body-container #map-container #map-controls #map-control-header > div span {
+                padding-right: 32px; }
+          #main-container #body-container #map-container #map-controls #map-control-header #map-control-secondary-header {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-right: -100%;
+            padding: 0;
+            padding-bottom: 1px;
+            background: #252525;
+            /* Don't show icons when they're in the menu header */ }
+            #main-container #body-container #map-container #map-controls #map-control-header #map-control-secondary-header img {
+              display: none; }
+        #main-container #body-container #map-container #map-controls #map-control-container {
+          max-height: 0;
+          background: #464644;
+          color: #999999;
+          font-weight: 100;
+          font-size: 16px;
+          width: 100%;
+          float: left;
+          position: relative;
+          transition: all 0.3s ease-in-out;
+          -o-transition: all 0.3s ease-in-out;
+          -webkit-transition: all 0.3s ease-in-out;
+          -moz-transition: all 0.3s ease-in-out; }
+          #main-container #body-container #map-container #map-controls #map-control-container.second-page {
+            transform: translate3d(-100%, 0, 0);
+            -o-transform: translate3d(-100%, 0, 0);
+            -webkit-transform: translate3d(-100%, 0, 0);
+            -moz-transform: translate3d(-100%, 0, 0);
+            -ms-transform: translate3d(-100%, 0, 0); }
+          #main-container #body-container #map-container #map-controls #map-control-container ul {
+            margin: 0;
+            padding: 0;
+            position: relative;
+            width: 100%; }
+            #main-container #body-container #map-container #map-controls #map-control-container ul.second-container {
+              position: absolute;
+              top: 0;
+              right: 0;
+              margin-right: -100%; }
+            #main-container #body-container #map-container #map-controls #map-control-container ul li {
+              list-style-type: none;
+              line-height: 64px;
+              display: block;
+              width: 100%;
+              clear: both;
+              position: relative;
+              background: #464644;
+              transition: color 0.25s;
+              -o-transition: color 0.25s;
+              -moz-transition: color 0.25s;
+              -webkit-transition: color 0.25s;
+              /* Icons */
+              /* Dealing with <select>s */
+              /* Dealing with checkboxes */
+              /* Slider */
+              /* Nested menus */ }
+              #main-container #body-container #map-container #map-controls #map-control-container ul li > span {
+                padding: 0 20px;
+                float: left; }
+              #main-container #body-container #map-container #map-controls #map-control-container ul li i.fa-chevron-right {
+                float: right;
+                display: inline-block;
+                line-height: 64px;
+                padding-right: 20px; }
+              #main-container #body-container #map-container #map-controls #map-control-container ul li img {
+                display: inline-block;
+                vertical-align: middle;
+                padding-right: 10px;
+                max-height: 80%; }
+              #main-container #body-container #map-container #map-controls #map-control-container ul li .circle {
+                float: right;
+                display: inline-block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                width: 18px;
+                height: 18px;
+                border: 1px solid #979797;
+                border-radius: 50%;
+                position: relative; }
+                #main-container #body-container #map-container #map-controls #map-control-container ul li .circle:after {
+                  width: 16px;
+                  height: 16px;
+                  display: inline-block;
+                  content: " ";
+                  position: absolute;
+                  top: 1px;
+                  right: 1px;
+                  border-radius: 50%;
+                  opacity: 0;
+                  transition: opacity 0.25s ease-in-out;
+                  -moz-transition: opacity 0.25s ease-in-out;
+                  -webkit-transition: opacity 0.25s ease-in-out;
+                  -o-transition: opacity 0.25s ease-in-out; }
+              #main-container #body-container #map-container #map-controls #map-control-container ul li.selected .circle:after {
+                background: #eeaa1f;
+                opacity: 1; }
+              #main-container #body-container #map-container #map-controls #map-control-container ul li:not(.selected):hover .circle:after {
+                background: #fff;
+                opacity: 0.1; }
+              #main-container #body-container #map-container #map-controls #map-control-container ul li .fa-check {
+                float: right;
+                display: inline-block;
+                line-height: 64px;
+                padding-right: 20px;
+                transition: opacity 0.25s ease-in-out;
+                -moz-transition: opacity 0.25s ease-in-out;
+                -webkit-transition: opacity 0.25s ease-in-out;
+                -o-transition: opacity 0.25s ease-in-out; }
+              #main-container #body-container #map-container #map-controls #map-control-container ul li:not(.selected) .fa-check {
+                opacity: 0; }
+              #main-container #body-container #map-container #map-controls #map-control-container ul li:not(.selected):hover .fa-check {
+                color: #ccc;
+                opacity: 0.2; }
+              #main-container #body-container #map-container #map-controls #map-control-container ul li.selected .fa-check {
+                opacity: 1;
+                color: #eeaa1f; }
+              #main-container #body-container #map-container #map-controls #map-control-container ul li select {
+                display: none; }
+              #main-container #body-container #map-container #map-controls #map-control-container ul li.select-option, #main-container #body-container #map-container #map-controls #map-control-container ul li.checkbox {
+                cursor: pointer; }
+              #main-container #body-container #map-container #map-controls #map-control-container ul li input[type=checkbox] {
+                display: none; }
+              #main-container #body-container #map-container #map-controls #map-control-container ul li.has-slider {
+                line-height: 50px;
+                height: 110px; }
+                #main-container #body-container #map-container #map-controls #map-control-container ul li.has-slider .slider {
+                  width: 90%;
+                  margin: 54px auto 0; }
+              #main-container #body-container #map-container #map-controls #map-control-container ul li.has-children {
+                cursor: pointer; }
+                #main-container #body-container #map-container #map-controls #map-control-container ul li.has-children:hover {
+                  color: #ccc; }
+                  #main-container #body-container #map-container #map-controls #map-control-container ul li.has-children:hover:after {
+                    color: #ccc; }
+                #main-container #body-container #map-container #map-controls #map-control-container ul li.has-children:after {
+                  display: inline-block;
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  font: normal normal normal 14px/1 FontAwesome;
+                  text-rendering: auto;
+                  -webkit-font-smoothing: antialiased;
+                  -moz-osx-font-smoothing: grayscale;
+                  transform: translate(0, 0);
+                  content: "\f054";
+                  color: #59595c;
+                  font-size: 18px;
+                  line-height: 64px;
+                  padding-right: 20px;
+                  transition: color 0.25s;
+                  -o-transition: color 0.25s;
+                  -moz-transition: color 0.25s;
+                  -webkit-transition: color 0.25s; }
+              #main-container #body-container #map-container #map-controls #map-control-container ul li.has-children:hover, #main-container #body-container #map-container #map-controls #map-control-container ul li.checkbox:hover, #main-container #body-container #map-container #map-controls #map-control-container ul li.select-option:hover {
+                color: #ccc; }
+              #main-container #body-container #map-container #map-controls #map-control-container ul li.spacer {
+                height: 20px;
+                background: rgba(70, 70, 68, 0.3); }
+              #main-container #body-container #map-container #map-controls #map-control-container ul li ul {
+                display: none; }
+            #main-container #body-container #map-container #map-controls #map-control-container ul li + li {
+              border-top: 1px solid #272727; }
+        .map-controls-open #main-container #body-container #map-container #map-controls {
+          width: 350px;
+          border-radius: 0;
+          -webkit-box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.15);
+          -moz-box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.15); }
+          .map-controls-open #main-container #body-container #map-container #map-controls #map-control-header {
+            background: #252525;
+            color: #999; }
+            .map-controls-open #main-container #body-container #map-container #map-controls #map-control-header i {
+              color: #57585b; }
+          .map-controls-open #main-container #body-container #map-container #map-controls #map-control-container {
+            max-height: 400px; }
+        @media screen and (max-width: 680px) {
+          #main-container #body-container #map-container #map-controls {
+            top: initial;
+            bottom: 20px;
+            width: 46px; }
+            #main-container #body-container #map-container #map-controls #map-control-header > div i {
+              padding-left: 13px; }
+            #main-container #body-container #map-container #map-controls #map-control-header > div span {
+              display: none; }
+            .map-controls-open #main-container #body-container #map-container #map-controls {
+              bottom: initial;
+              z-index: 20;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%; }
+              .map-controls-open #main-container #body-container #map-container #map-controls #map-control-header > div span {
+                display: inline; } }
+
+/* Functional styling;
+ * These styles are required for noUiSlider to function.
+ * You don't need to change these rules to apply your design.
+ */
+.noUi-target,
+.noUi-target * {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-touch-action: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.noUi-target {
+  position: relative;
+  direction: ltr; }
+
+.noUi-base {
+  width: 100%;
+  height: 100%;
+  position: relative; }
+
+.noUi-origin {
+  position: absolute;
+  right: 0;
+  top: -6px;
+  left: 0;
+  bottom: 0; }
+
+.noUi-handle {
+  position: relative;
+  z-index: 1; }
+
+.noUi-stacking .noUi-handle {
+  /* This class is applied to the lower origin when
+     its values is > 50%. */
+  z-index: 10; }
+
+.noUi-stacking + .noUi-origin {
+  /* Fix stacking order in IE7, which incorrectly
+     creates a new context for the origins. */
+  *z-index: -1; }
+
+.noUi-state-tap .noUi-origin {
+  -webkit-transition: left 0.3s, top 0.3s;
+  transition: left 0.3s, top 0.3s; }
+
+.noUi-state-drag * {
+  cursor: inherit !important; }
+
+/* Painting and performance;
+ * Browsers can paint handles in their own layer.
+ */
+.noUi-base {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+/* Slider size and handle placement;
+ */
+.noUi-horizontal {
+  height: 2px; }
+
+.noUi-horizontal .noUi-handle {
+  width: 24px;
+  height: 24px;
+  left: -17px;
+  top: -6px;
+  border-radius: 50%; }
+
+.noUi-vertical {
+  width: 18px; }
+
+.noUi-vertical .noUi-handle {
+  width: 28px;
+  height: 34px;
+  left: -6px;
+  top: -17px; }
+
+/* Styling;
+ */
+.noUi-background {
+  background: #262626; }
+
+.noUi-connect {
+  background: #3FB8AF;
+  box-shadow: inset 0 0 3px rgba(51, 51, 51, 0.45);
+  -webkit-transition: background 450ms;
+  transition: background 450ms; }
+
+.noUi-origin {
+  border-radius: 2px; }
+
+.noUi-target {
+  /*border-radius: 4px;
+  border: 1px solid #D3D3D3;
+  box-shadow: inset 0 1px 1px #F0F0F0, 0 3px 6px -5px #BBB;*/ }
+
+.noUi-target.noUi-connect {
+  box-shadow: inset 0 0 3px rgba(51, 51, 51, 0.45), 0 3px 6px -5px #BBB; }
+
+/* Handles and cursors;
+ */
+.noUi-dragable {
+  cursor: w-resize; }
+
+.noUi-vertical .noUi-dragable {
+  cursor: n-resize; }
+
+.noUi-handle {
+  border: 1px solid #D9D9D9;
+  border-radius: 3px;
+  background: #FFF;
+  cursor: default;
+  box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #EBEBEB, 0 3px 6px -3px #BBB; }
+
+.noUi-active {
+  box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #DDD, 0 3px 6px -3px #BBB; }
+
+/* Handle stripes;
+ */
+/*.noUi-handle:before,
+.noUi-handle:after {
+	content: "";
+	display: block;
+	position: absolute;
+	height: 14px;
+	width: 1px;
+	background: #E8E7E6;
+	left: 14px;
+	top: 6px;
+}
+.noUi-handle:after {
+	left: 17px;
+}
+.noUi-vertical .noUi-handle:before,
+.noUi-vertical .noUi-handle:after {
+	width: 14px;
+	height: 1px;
+	left: 6px;
+	top: 14px;
+}
+.noUi-vertical .noUi-handle:after {
+	top: 17px;
+}*/
+/* Disabled state;
+ */
+[disabled].noUi-connect,
+[disabled] .noUi-connect {
+  background: #B8B8B8; }
+
+[disabled] .noUi-handle {
+  cursor: not-allowed; }
+
+#modal-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 51; }
+  #modal-overlay .modal {
+    background: #fff;
+    width: 80%;
+    min-height: 150px;
+    padding: 30px;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -webkit-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.5);
+    max-height: 75%;
+    overflow-y: scroll; }
+    #modal-overlay .modal h2 {
+      font-family: 'Open Sans Condensed', sans-serif;
+      font-weight: 100;
+      font-size: 40px;
+      margin-top: 0; }
+    #modal-overlay .modal i.fa-times {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 30px;
+      color: #cccccc; }
+      #modal-overlay .modal i.fa-times:hover {
+        color: #aaa; }
+
+/*# sourceMappingURL=wri-map.css.map */
