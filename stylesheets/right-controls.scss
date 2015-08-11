@@ -129,19 +129,25 @@
   }
 
   @media screen and (max-width:$mobileBreakpoint) {
-
-    top:initial;
-    bottom:20px;
+    height:100%;
+    box-sizing:border-box;
+    top:0;
 
     .button {
-      &:not(#home-button-container) {
+      &:not(#home-button-container):not(#search-expandable) {
         display:none;
       }
 
       &#home-button-container {
         top:initial;
-        bottom:0;
+        bottom:20px;
         margin-bottom:0;
+      }
+
+      &#search-expandable {
+        position:absolute;
+        top:10px;
+        bottom:initial;
       }
     }
   }

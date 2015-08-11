@@ -364,14 +364,19 @@ textarea, input {
                 padding-left: 5px; }
         @media screen and (max-width: 680px) {
           #main-container #body-container #map-container #right-controls {
-            top: initial;
-            bottom: 20px; }
-            #main-container #body-container #map-container #right-controls .button:not(#home-button-container) {
+            height: 100%;
+            box-sizing: border-box;
+            top: 0; }
+            #main-container #body-container #map-container #right-controls .button:not(#home-button-container):not(#search-expandable) {
               display: none; }
             #main-container #body-container #map-container #right-controls .button#home-button-container {
               top: initial;
-              bottom: 0;
-              margin-bottom: 0; } }
+              bottom: 20px;
+              margin-bottom: 0; }
+            #main-container #body-container #map-container #right-controls .button#search-expandable {
+              position: absolute;
+              top: 10px;
+              bottom: initial; } }
       #main-container #body-container #map-container #map-controls {
         background: rgba(70, 70, 68, 0.3);
         position: absolute;
